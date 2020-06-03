@@ -1,10 +1,19 @@
 import math
+import random
 FirstNumber = 0
 SecondNumber = 0
 operation = "??"
 Answer = 0
 SqrtAns = 0
 SqrtNumber = 0
+RandomNumber = 0
+maxnum = 0
+def getRandomNumber():
+    global RandomNumber
+    global maxnum
+    maxnum = int(input("What is the limit to the random number? "))
+    RandomNumber = random.randint(1,maxnum)
+    print("The random number is: " + str(RandomNumber))
 def askSqrtNumber():
     global SqrtNumber
     global SqrtAns
@@ -64,6 +73,8 @@ elif operation.isalpha() and operation == str("Subtract") or operation == str("s
     askFirstNumber()
 elif operation.isalpha() and operation == str("square root") or operation == str("Square root") or operation == str("square Root") or operation == str("Square Root") or operation == str("sqrt") or operation == str("Sqrt") or operation == str("SQrt") or operation == str("SQRT") or operation == str("sQRT") or operation == str("sqRT") or operation == str("sqrT") or operation == str("SqRt") or operation == str("sQrT"):
     askSqrtNumber()
+elif operation.isalpha() and operation == str("random"):
+    getRandomNumber()
 else:
-    print("invalid operation (type it as a word)(power, sqrt)")
+    print("invalid operation (type it as a word)(power, sqrt, random)")
     askOperation()
