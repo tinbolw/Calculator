@@ -1,7 +1,17 @@
+import math
 FirstNumber = 0
 SecondNumber = 0
 operation = "??"
 Answer = 0
+SqrtAns = 0
+SqrtNumber = 0
+def askSqrtNumber():
+    global SqrtNumber
+    global SqrtAns
+    SqrtNumber = int(input("What is the number? "))
+    SqrtAns = math.sqrt(SqrtNumber)
+    print("This is the answer: " + str((SqrtAns)))
+
 
 
 def askOperation():
@@ -35,7 +45,7 @@ def operate():
     elif operation == str("divide") or operation == str("Divide"):
         Answer = int(FirstNumber / SecondNumber)
         print("The answer is " + str(Answer))
-    elif operation == str("power") or operation == str("Power")
+    elif operation == str("power") or operation == str("Power"):
         Answer = int(FirstNumber ^ SecondNumber)
         print("The answer is " + str(Answer))
 
@@ -52,6 +62,8 @@ elif operation.isalpha() and operation == str("Add") or operation == str("add"):
     askFirstNumber()
 elif operation.isalpha() and operation == str("Subtract") or operation == str("subtract"):
     askFirstNumber()
+elif operation.isalpha() and operation == str("square root") or operation == str("Square root") or operation == str("square Root") or operation == str("Square Root") or operation == str("sqrt") or operation == str("Sqrt") or operation == str("SQrt") or operation == str("SQRT") or operation == str("sQRT") or operation == str("sqRT") or operation == str("sqrT") or operation == str("SqRt") or operation == str("sQrT"):
+    askSqrtNumber()
 else:
     print("invalid operation (type it as a word)(power, sqrt)")
     askOperation()
