@@ -1,4 +1,3 @@
-import math
 import random
 
 FirstNumber = 0
@@ -23,7 +22,7 @@ def askSqrtNumber():
     global SqrtNumber
     global SqrtAns
     SqrtNumber = int(input("What is the number? "))
-    SqrtAns = math.sqrt(SqrtNumber)
+    SqrtAns = SqrtNumber ** 0.5
     print("This is the answer: " + str((SqrtAns)))
 
 
@@ -59,7 +58,7 @@ def operate():
         Answer = int(FirstNumber / SecondNumber)
         print("The answer is " + str(Answer))
     elif operation == str("power") or operation == str("Power"):
-        Answer = int(FirstNumber ^ SecondNumber)
+        Answer = int(FirstNumber ** SecondNumber)
         print("The answer is " + str(Answer))
 
 
@@ -81,5 +80,6 @@ elif operation.isalpha() and operation == str("square root") or operation == str
 elif operation.isalpha() and operation == str("random"):
     getRandomNumber()
 else:
-    print("invalid operation (type it as a word)(power, sqrt, random)")
+    print("invalid operation)")
+    print("Operations:\nAdd\nSubtract\nDivide\nMultiply\nPower\nRandom\n")
     askOperation()
