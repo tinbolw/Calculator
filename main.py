@@ -1,5 +1,16 @@
 import random
-import re
+# DISCLAIMER: I AM NOT A CERTIFIED PROGRAMMER
+# I HAVE LITTLE EXPERIENCE, TAKE ALL MY CLAIMS
+# WITH A GRAIN OF SALT, AS THAT WILL BRING THE FLAVOR OUT
+# JOKE BTW BUT PLEASE DO TAKE MY CLAIMS WITH A GRAIN OF SALT
+
+# i import a module called "random" which can pick random numbers and stuff
+# if you want to use a module in python, you type the
+# module name, then the action (random.randint)
+# you can also import modules as something else
+# like: "import random as ran"
+# or you can import a module from the module
+# "from random import randint"
 FirstNumber = 0
 SecondNumber = 0
 operation = "??"
@@ -9,6 +20,9 @@ SqrtNumber = 0
 RandomNumber = 0
 maxnum = 0
 useAgainput = None
+# i set all variables that i use in the program to nothing
+# i dont think this is necessary
+# None = nothing. 0 does not = nothing
 def useAgain():
     global useAgainput
     global operation
@@ -22,6 +36,15 @@ def useAgain():
     else:
         print("Invalid Selection")
         useAgain()
+        
+# i define a function called useAgain which triggers
+# when the program is finished to restart it if you want to
+# i set the variables that i want to use in the function as 
+# global so they can be used anywhere
+# notice the (): at the end of the function name (useAgain():)
+# that is so the function doesnt include the whole program
+# the (): says, whatever under the function and is indented
+# is part of the function
 
 def getRandomNumber():
     global RandomNumber
@@ -39,7 +62,12 @@ def askSqrtNumber():
     SqrtAns = SqrtNumber ** 0.5
     print("This is the answer: " + str((SqrtAns)))
     useAgain()
-
+    
+# notice the "useAgain():" at the end of each function
+# this runs useAgain
+# if you want to run a function, remember the ()
+# parameters would normally go there but since my function
+# doesnt take any parameters, so i leave it blank.
 
 def askOperation():
     global operation
@@ -71,6 +99,13 @@ def askOperation():
         operation = input("Operation: ")
 
 
+# ^^ is the code that determines what operation you entered
+# i use the operation = float("3.14159")
+# because if someone enters an invalid operation, it will
+# set operation at 3.14159 and that makes the if
+# statement realize that the person entered
+# the operation incorrectly so
+# it would check the operation again
 
 
 def askSecondNumber():
@@ -78,6 +113,10 @@ def askSecondNumber():
     SecondNumber = int(input("What is the second number? "))
     operate()
 
+# these functions get the number(s) that you want to use
+# the input() function is used here
+# setting a variable to contain the value recieved
+# from the input() is a good idea
 
 def askFirstNumber():
     global FirstNumber
@@ -108,6 +147,7 @@ def operate():
         print("The answer is " + str(Answer))
         useAgain()
 
+# the code that calculates the answers is ^^
 
 print("Operations:\nAdd / Subtract\nMultiply / Divide\nSqrt /Power \nRandom\n")
 askOperation()
@@ -128,3 +168,5 @@ else:
     print("invalid operation (its case sensitive)")
     print("Operations:\nAdd\nSubtract\nDivide\nMultiply\nSQRT\nPower\nRandom\n")
     askOperation()
+
+# this code ^^ asks what operation.
